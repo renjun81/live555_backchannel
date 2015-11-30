@@ -295,12 +295,9 @@ protected:
   // 20140624 albert.liao modified start
   Boolean parseSDPAttribute_flag(char const* sdpLine);
   virtual Boolean createSinkObjects(int useSpecialRTPoffset);
-  virtual FramedSource* createNewStreamSource(unsigned clientSessionId,
-                                                unsigned& estBitrate);
+  virtual FramedSource* createNewStreamSource(unsigned clientSessionId, unsigned& estBitrate);
   // "estBitrate" is the stream's estimated bitrate, in kbps
-  virtual RTPSink* createNewRTPSink(Groupsock* rtpGroupsock,
-                                      unsigned char rtpPayloadTypeIfDynamic,
-                                      FramedSource* inputSource);
+  virtual RTPSink* createNewRTPSink(Groupsock* rtpGroupsock, unsigned char rtpPayloadTypeIfDynamic, FramedSource* inputSource);
   // 20140624 albert.liao modified end
     
   virtual Boolean createSourceObjects(int useSpecialRTPoffset);

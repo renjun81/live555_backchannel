@@ -1,5 +1,8 @@
+Makefile
 *.[oa]
+
 *.exe
+*.mak
 
 xcuserdata
 

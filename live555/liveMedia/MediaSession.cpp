@@ -212,11 +212,11 @@ Boolean MediaSession::initializeWithSDP(char const* sdpDescription) {
       if (subsession->parseSDPAttribute_source_filter(sdpLine)) continue;
       if (subsession->parseSDPAttribute_x_dimensions(sdpLine)) continue;
       if (subsession->parseSDPAttribute_framerate(sdpLine)) continue;
-        
+
       // 20140624 albert.liao modified start
       if (subsession->parseSDPAttribute_flag(sdpLine)) continue;
       // 20140624 albert.liao modified end
-        
+
       // (Later, check for malformed lines, and other valid SDP lines#####)
     }
     if (sdpLine != NULL) subsession->fSavedSDPLines[sdpLine-mStart] = '\0';
@@ -618,6 +618,10 @@ MediaSubsession::MediaSubsession(MediaSession& parent)
   setAttribute("profile-id", "1"); // used with "video/H265"
   setAttribute("level-id", "93"); // used with "video/H265"
   setAttribute("interop-constraints", "B00000000000"); // used with "video/H265"
+
+  // When debug on eclipse, this variable was not initialized
+  fFlag = 0;
+  fRTPSink = NULL;
 }
 
 MediaSubsession::~MediaSubsession() {
@@ -678,12 +682,14 @@ static Boolean const honorSDPPortChoice
 Boolean MediaSubsession::initiate(int useSpecialRTPoffset) {
 
   if (fReadSource != NULL) return True; // has already been initiated
-    
+
   do {
     if (fCodecName == NULL) {
       env().setResultMsg("Codec is unspecified");
       break;
     }
+
+    fprintf(stderr,"isSSM()=%d\n",isSSM());
 
     // Create RTP and RTCP 'Groupsocks' on which to receive incoming data.
     // (Groupsocks will work even for unicast addresses)
@@ -698,7 +704,7 @@ Boolean MediaSubsession::initiate(int useSpecialRTPoffset) {
 	fClientPortNum = fClientPortNum&~1;
 	    // use an even-numbered port for RTP, and the next (odd-numbered) port for RTCP
       }
-        fprintf(stderr,"isSSM()=%d\n",isSSM());
+
       if (isSSM()) {
 	fRTPSocket = new Groupsock(env(), tempAddr, fSourceFilterAddr, fClientPortNum);
       } else {
@@ -708,7 +714,7 @@ Boolean MediaSubsession::initiate(int useSpecialRTPoffset) {
 	env().setResultMsg("Failed to create RTP socket");
 	break;
       }
-      
+
       if (protocolIsRTP) {
 	// Set our RTCP port to be the RTP port +1
 	portNumBits const rtcpPortNum = fClientPortNum|1;
@@ -719,6 +725,9 @@ Boolean MediaSubsession::initiate(int useSpecialRTPoffset) {
 	}
       }
     } else {
+
+	fprintf(stderr, "-------------- use ephemeral port numbers --------------------\n");
+
       // Port numbers were not specified in advance, so we use ephemeral port numbers.
       // Create sockets until we get a port-number pair (even: RTP; even+1: RTCP).
       // We need to make sure that we don't keep trying to use the same bad port numbers over
@@ -730,6 +739,9 @@ Boolean MediaSubsession::initiate(int useSpecialRTPoffset) {
           // ensures that our new ephemeral port number won't be one that's already in use
 
       while (1) {
+
+	  fprintf(stderr, "-------- creating sockets --------\n");
+
 	// Create a new socket:
 	if (isSSM()) {
 	  fRTPSocket = new Groupsock(env(), tempAddr, fSourceFilterAddr, 0);
@@ -741,13 +753,16 @@ Boolean MediaSubsession::initiate(int useSpecialRTPoffset) {
 	  break;
 	}
 
+	fprintf(stderr, "-------- rtp socket created. --------\n");
+
 	// Get the client port number, and check whether it's even (for RTP):
 	Port clientPort(0);
 	if (!getSourcePort(env(), fRTPSocket->socketNum(), clientPort)) {
 	  break;
 	}
-	fClientPortNum = ntohs(clientPort.num()); 
+	fClientPortNum = ntohs(clientPort.num());
 	if ((fClientPortNum&1) != 0) { // it's odd
+	    fprintf(stderr, "-------- 11111111111 --------\n");
 	  // Record this socket in our table, and keep trying:
 	  unsigned key = (unsigned)fClientPortNum;
 	  Groupsock* existing = (Groupsock*)socketHashTable->Add((char const*)key, fRTPSocket);
@@ -762,11 +777,15 @@ Boolean MediaSubsession::initiate(int useSpecialRTPoffset) {
 	} else {
 	  fRTCPSocket = new Groupsock(env(), tempAddr, rtcpPortNum, 255);
 	}
+
+	fprintf(stderr, "-------- rtcp socket created. --------\n");
+
 	if (fRTCPSocket != NULL && fRTCPSocket->socketNum() >= 0) {
 	  // Success! Use these two sockets.
 	  success = True;
 	  break;
 	} else {
+	    fprintf(stderr, "-------- 222222 --------\n");
 	  // We couldn't create the RTCP socket (perhaps that port number's already in use elsewhere?).
 	  delete fRTCPSocket; fRTCPSocket = NULL;
 
@@ -788,6 +807,8 @@ Boolean MediaSubsession::initiate(int useSpecialRTPoffset) {
       if (!success) break; // a fatal error occurred trying to create the RTP and RTCP sockets; we can't continue
     }
 
+    fprintf(stderr, "-----------Ready to send init backchannel-----------\n");
+
     // Try to use a big receive buffer for RTP - at least 0.1 second of
     // specified bandwidth and at least 50 KB
     unsigned rtpBufSize = fBandwidth * 25 / 2; // 1 kbps * 0.1 s = 12.5 bytes
@@ -804,15 +825,15 @@ Boolean MediaSubsession::initiate(int useSpecialRTPoffset) {
     if(fFlag == FLAG_RECVONLY)
     {
       fprintf(stderr, "MediaSubsession::initiate()  FLAG_RECVONLY\n");
-        
+
       // Create "fRTPSource" and "fReadSource":
       if (!createSourceObjects(useSpecialRTPoffset)) break;
-      
+
       if (fReadSource == NULL) {
           env().setResultMsg("Failed to create read source");
           break;
       }
-      
+
       // Finally, create our RTCP instance. (It starts running automatically)
       if (fRTPSource != NULL && fRTCPSocket != NULL) {
           // If bandwidth is specified, use it and add 5% for RTCP overhead.
@@ -836,12 +857,12 @@ Boolean MediaSubsession::initiate(int useSpecialRTPoffset) {
       fprintf(stderr, "MediaSubsession::initiate()  FLAG_SENDONLY\n");
       // Create "fRTPSink" and "fReadSource":
       if (!createSinkObjects(useSpecialRTPoffset)) break;
-      
+
       if (fRTPSink == NULL) {
           env().setResultMsg("Failed to create rtp sink");
           break;
       }
-      
+
       // Finally, create our RTCP instance. (It starts running automatically)
       if (fRTPSink != NULL && fRTCPSocket != NULL) {
           // If bandwidth is specified, use it and add 5% for RTCP overhead.
@@ -866,7 +887,7 @@ Boolean MediaSubsession::initiate(int useSpecialRTPoffset) {
       return False;
     }
 // 20140624 albert.liao modified end
-      
+
     return True;
   } while (0);
 
@@ -1134,7 +1155,7 @@ Boolean MediaSubsession::parseSDPAttribute_fmtp(char const* sdpLine) {
 	// Convert <name> to lower-case, to ease comparison:
 	Locale l("POSIX");
 	for (char* c = nameStr; *c != '\0'; ++c) *c = tolower(*c);
-	
+
 	if (sscanfResult == 1) {
 	  // <name>
 	  setAttribute(nameStr);
@@ -1200,7 +1221,7 @@ int MediaSubsession::getFlag(void)
 Boolean MediaSubsession::parseSDPAttribute_flag(char const* sdpLine) {
     // Check for a "a=sendonly|recvonly"
     Boolean parseSuccess = False;
-    
+
     if (strncmp(sdpLine, "a=sendonly", 10) == 1) {
         parseSuccess = True;
         fFlag = (unsigned)FLAG_RECVONLY;
@@ -1208,7 +1229,7 @@ Boolean MediaSubsession::parseSDPAttribute_flag(char const* sdpLine) {
         parseSuccess = True;
         fFlag = (unsigned)FLAG_SENDONLY;
     }
-    
+
     return parseSuccess;
 }
 // 20140624 albert.liao modified end
@@ -1221,7 +1242,7 @@ Boolean MediaSubsession::createSourceObjects(int useSpecialRTPoffset){
             // A UDP-packetized stream (*not* a RTP stream)
             fReadSource = BasicUDPSource::createNew(env(), fRTPSocket);
             fRTPSource = NULL; // Note!
-            
+
             if (strcmp(fCodecName, "MP2T") == 0) { // MPEG-2 Transport Stream
                 fReadSource = MPEG2TransportStreamFramer::createNew(env(), fReadSource);
                 // this sets "durationInMicroseconds" correctly, based on the PCR values
@@ -1267,13 +1288,13 @@ Boolean MediaSubsession::createSourceObjects(int useSpecialRTPoffset){
                 = MP3ADURTPSource::createNew(env(), fRTPSocket, fRTPPayloadFormat,
                                              fRTPTimestampFrequency);
                 if (fRTPSource == NULL) break;
-                
+
                 if (!fReceiveRawMP3ADUs) {
                     // Add a filter that deinterleaves the ADUs after depacketizing them:
                     MP3ADUdeinterleaver* deinterleaver
                     = MP3ADUdeinterleaver::createNew(env(), fRTPSource);
                     if (deinterleaver == NULL) break;
-                    
+
                     // Add another filter that converts these ADUs to MP3 frames:
                     fReadSource = MP3FromADUSource::createNew(env(), deinterleaver);
                 }
@@ -1285,7 +1306,7 @@ Boolean MediaSubsession::createSourceObjects(int useSpecialRTPoffset){
                                              fRTPTimestampFrequency,
                                              "audio/MPA-ROBUST" /*hack*/);
                 if (fRTPSource == NULL) break;
-                
+
                 // Add a filter that converts these ADUs to MP3 frames:
                 fReadSource = MP3FromADUSource::createNew(env(), fRTPSource,
                                                           False /*no ADU header*/);
@@ -1429,7 +1450,7 @@ Boolean MediaSubsession::createSourceObjects(int useSpecialRTPoffset){
                 env().setResultMsg("RTP payload format unknown or not supported");
                 break;
             }
-            
+
             if (createSimpleRTPSource) {
                 char* mimeType
                 = new char[strlen(mediumName()) + strlen(codecName()) + 2] ;
@@ -1442,10 +1463,10 @@ Boolean MediaSubsession::createSourceObjects(int useSpecialRTPoffset){
                 delete[] mimeType;
             }
         }
-        
+
         return True;
     } while (0);
-    
+
     return False; // an error occurred
 }
 
@@ -1468,5 +1489,4 @@ SDPAttribute::SDPAttribute(char const* strValue, Boolean valueIsHexadecimal)
 SDPAttribute::~SDPAttribute() {
   delete[] fStrValue;
 }
-
 

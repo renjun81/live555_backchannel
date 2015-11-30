@@ -20,6 +20,11 @@ cd ../BasicUsageEnvironment
 /bin/rm -f Makefile
 cat Makefile.head ../win32config Makefile.tail > BasicUsageEnvironment.mak
 
+cd ../BackChannel
+/bin/rm -f BackChannel.mak
+/bin/rm -f Makefile
+cat Makefile.head ../win32config Makefile.tail > BackChannel.mak
+
 cd ../testProgs
 /bin/rm -f testProgs.mak
 /bin/rm -f Makefile

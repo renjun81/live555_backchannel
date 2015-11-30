@@ -36,6 +36,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 
 class RTSPClient: public Medium {
 public:
+
+	Boolean bRequireBackChannel;
+
   static RTSPClient* createNew(UsageEnvironment& env, char const* rtspURL,
 			       int verbosityLevel = 0,
 			       char const* applicationName = NULL,

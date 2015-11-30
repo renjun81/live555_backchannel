@@ -35,6 +35,11 @@ cd ../BackChannel
 cat Makefile.head ../config.$1 Makefile.tail > Makefile
 chmod a-w Makefile
 
+cd ../scbtBackChannel
+/bin/rm -f Makefile
+cat Makefile.head ../config.$1 Makefile.tail > Makefile
+chmod a-w Makefile
+
 cd ../testProgs
 /bin/rm -f Makefile
 cat Makefile.head ../config.$1 Makefile.tail > Makefile

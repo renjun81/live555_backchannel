@@ -1476,3 +1476,24 @@ void checkInterPacketGaps(void* /*clientData*/) {
 				 (TaskFunc*)checkInterPacketGaps, NULL);
   }
 }
+
+
+// 20140706 albert.liao modified start
+FramedSource* MediaSubsession
+::createNewStreamSource(unsigned /*clientSessionId*/, unsigned& estBitrate) {
+   return NULL;
+}
+
+RTPSink* MediaSubsession
+::createNewRTPSink(Groupsock* rtpGroupsock,
+                   unsigned char rtpPayloadTypeIfDynamic,
+                   FramedSource* inputSource) {
+
+   return NULL;
+}
+
+Boolean MediaSubsession::createSinkObjects(int useSpecialRTPoffset)
+{
+   return False;
+}
+// 20140706 albert.liao modified end

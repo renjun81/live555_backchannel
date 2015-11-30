@@ -9,11 +9,16 @@ all:	$(ALL)
 .$(CPP).$(OBJ):
 	$(CPLUSPLUS_COMPILER) -c $(CPLUSPLUS_FLAGS) $<
 
-BACKCHANNEL_LIB_OBJS = ADTSAudioBufferSource.$(OBJ) ADTSAudioFileSink.$(OBJ) ADTSBackChannelAudioFileServerMediaSubsession.$(OBJ) AudioUtility.$(OBJ)
+BACKCHANNEL_LIB_OBJS = ADTSAudioBufferSource.$(OBJ) \
+						ADTSAudioFileSink.$(OBJ) \
+						ADTSBackChannelAudioFileServerMediaSubsession.$(OBJ) \
+						AudioUtility.$(OBJ) \
+						WaveBackChannelAudioFileServerMediaSubsession.$(OBJ)
 
 ADTSAudioBufferSource.$(CPP):	include/ADTSAudioBufferSource.hh
 ADTSAudioFileSink.$(CPP):	include/ADTSAudioFileSink.hh
-ADTSBackChannelAudioFileServerMediaSubsession.$(CPP):	include/ADTSBackChannelAudioFileServerMediaSubsession.hh 
+ADTSBackChannelAudioFileServerMediaSubsession.$(CPP):	include/ADTSBackChannelAudioFileServerMediaSubsession.hh
+WaveBackChannelAudioFileServerMediaSubsession.$(CPP):	include/WaveBackChannelAudioFileServerMediaSubsession.hh 
 AudioUtility.$(C):		include/AudioUtility.h
 
 libbackChannel.$(LIB_SUFFIX): $(BACKCHANNEL_LIB_OBJS) \

@@ -324,7 +324,7 @@ unsigned RTSPClient::responseBufferSize = 20000; // default value; you can reass
 RTSPClient::RTSPClient(UsageEnvironment& env, char const* rtspURL,
 		       int verbosityLevel, char const* applicationName,
 		       portNumBits tunnelOverHTTPPortNum, int socketNumToServer)
-  : Medium(env),
+  : Medium(env), bRequireBackChannel(false),
     fVerbosityLevel(verbosityLevel), fCSeq(1), fServerAddress(0),
     fTunnelOverHTTPPortNum(tunnelOverHTTPPortNum), fUserAgentHeaderStr(NULL), fUserAgentHeaderStrLen(0),
     fInputSocketNum(-1), fOutputSocketNum(-1), fBaseURL(NULL), fTCPStreamIdCount(0),
@@ -597,7 +597,7 @@ Boolean RTSPClient::setRequestFields(RequestRecord* request,
     // 20140625 albert.liao modified start
     extraHeaders = (char*)"Accept: application/sdp\r\n";
     // Enable below header to support ONVIF
-    // extraHeaders = (char*)"Accept: application/sdp\r\nRequire: www.onvif.org/ver20/backchannel\r\n";
+    extraHeaders = (char*)( bRequireBackChannel ? "Accept: application/sdp\r\nRequire: www.onvif.org/ver20/backchannel\r\n" : "Accept: application/sdp\r\n");
     // 20140625 albert.liao modified end
       
   } else if (strcmp(request->commandName(), "OPTIONS") == 0) {
