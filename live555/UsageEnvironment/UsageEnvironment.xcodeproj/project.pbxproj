@@ -1,0 +1,160 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		9A87362C195916AA0072620E /* .DS_Store */ = {isa = PBXFileReference; lastKnownFileType = file; path = .DS_Store; sourceTree = "<group>"; };
+		9A87362D195916AA0072620E /* COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		9A87362E195916AA0072620E /* HashTable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HashTable.cpp; sourceTree = "<group>"; };
+		9A87362F195916AA0072620E /* HashTable.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = HashTable.o; sourceTree = "<group>"; };
+		9A873630195916AA0072620E /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; path = include; sourceTree = "<group>"; };
+		9A873631195916AA0072620E /* libUsageEnvironment.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUsageEnvironment.a; sourceTree = "<group>"; };
+		9A873632195916AA0072620E /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		9A873633195916AA0072620E /* Makefile.head */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.head; sourceTree = "<group>"; };
+		9A873634195916AA0072620E /* Makefile.tail */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.tail; sourceTree = "<group>"; };
+		9A873635195916AA0072620E /* strDup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = strDup.cpp; sourceTree = "<group>"; };
+		9A873636195916AA0072620E /* strDup.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = strDup.o; sourceTree = "<group>"; };
+		9A873637195916AA0072620E /* UsageEnvironment.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UsageEnvironment.cpp; sourceTree = "<group>"; };
+		9A873638195916AA0072620E /* UsageEnvironment.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = UsageEnvironment.o; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		9A873626195916AA0072620E = {
+			isa = PBXGroup;
+			children = (
+				9A87362C195916AA0072620E /* .DS_Store */,
+				9A87362D195916AA0072620E /* COPYING */,
+				9A87362E195916AA0072620E /* HashTable.cpp */,
+				9A87362F195916AA0072620E /* HashTable.o */,
+				9A873630195916AA0072620E /* include */,
+				9A873631195916AA0072620E /* libUsageEnvironment.a */,
+				9A873632195916AA0072620E /* Makefile */,
+				9A873633195916AA0072620E /* Makefile.head */,
+				9A873634195916AA0072620E /* Makefile.tail */,
+				9A873635195916AA0072620E /* strDup.cpp */,
+				9A873636195916AA0072620E /* strDup.o */,
+				9A873637195916AA0072620E /* UsageEnvironment.cpp */,
+				9A873638195916AA0072620E /* UsageEnvironment.o */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		9A87362B195916AA0072620E /* UsageEnvironment */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 9A873639195916AA0072620E /* Build configuration list for PBXLegacyTarget "UsageEnvironment" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = UsageEnvironment;
+			passBuildSettingsInEnvironment = 1;
+			productName = UsageEnvironment;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		9A873627195916AA0072620E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 9A87362A195916AA0072620E /* Build configuration list for PBXProject "UsageEnvironment" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9A873626195916AA0072620E;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A87362B195916AA0072620E /* UsageEnvironment */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		9A873628195916AA0072620E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.9;
+			};
+			name = Debug;
+		};
+		9A873629195916AA0072620E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.9;
+			};
+			name = Release;
+		};
+		9A87363A195916AA0072620E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = UsageEnvironment;
+			};
+			name = Debug;
+		};
+		9A87363B195916AA0072620E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = UsageEnvironment;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A87362A195916AA0072620E /* Build configuration list for PBXProject "UsageEnvironment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A873628195916AA0072620E /* Debug */,
+				9A873629195916AA0072620E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A873639195916AA0072620E /* Build configuration list for PBXLegacyTarget "UsageEnvironment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A87363A195916AA0072620E /* Debug */,
+				9A87363B195916AA0072620E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A873627195916AA0072620E /* Project object */;
+}

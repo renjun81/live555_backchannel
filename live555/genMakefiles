@@ -30,6 +30,11 @@ cd ../BasicUsageEnvironment
 cat Makefile.head ../config.$1 Makefile.tail > Makefile
 chmod a-w Makefile
 
+cd ../BackChannel
+/bin/rm -f Makefile
+cat Makefile.head ../config.$1 Makefile.tail > Makefile
+chmod a-w Makefile
+
 cd ../testProgs
 /bin/rm -f Makefile
 cat Makefile.head ../config.$1 Makefile.tail > Makefile

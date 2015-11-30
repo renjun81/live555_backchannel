@@ -1,0 +1,173 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		B2EB8D8219586E380058A962 /* BasicHashTable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BasicHashTable.cpp; sourceTree = "<group>"; };
+		B2EB8D8319586E380058A962 /* BasicTaskScheduler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BasicTaskScheduler.cpp; sourceTree = "<group>"; };
+		B2EB8D8419586E380058A962 /* BasicTaskScheduler0.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BasicTaskScheduler0.cpp; sourceTree = "<group>"; };
+		B2EB8D8519586E380058A962 /* BasicUsageEnvironment.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BasicUsageEnvironment.cpp; sourceTree = "<group>"; };
+		B2EB8D8619586E380058A962 /* BasicUsageEnvironment0.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BasicUsageEnvironment0.cpp; sourceTree = "<group>"; };
+		B2EB8D8719586E380058A962 /* COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		B2EB8D8819586E380058A962 /* DelayQueue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DelayQueue.cpp; sourceTree = "<group>"; };
+		B2EB8D8919586E380058A962 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; path = include; sourceTree = "<group>"; };
+		B2EB8D8A19586E380058A962 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		B2EB8D8B19586E380058A962 /* Makefile.head */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.head; sourceTree = "<group>"; };
+		B2EB8D8C19586E380058A962 /* Makefile.tail */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.tail; sourceTree = "<group>"; };
+		B2EB925A1958839A0058A962 /* UsageEnvironment.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UsageEnvironment.xcodeproj; path = ../UsageEnvironment/UsageEnvironment.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		B2EB8D7C19586E380058A962 = {
+			isa = PBXGroup;
+			children = (
+				B2EB925A1958839A0058A962 /* UsageEnvironment.xcodeproj */,
+				B2EB8D8219586E380058A962 /* BasicHashTable.cpp */,
+				B2EB8D8319586E380058A962 /* BasicTaskScheduler.cpp */,
+				B2EB8D8419586E380058A962 /* BasicTaskScheduler0.cpp */,
+				B2EB8D8519586E380058A962 /* BasicUsageEnvironment.cpp */,
+				B2EB8D8619586E380058A962 /* BasicUsageEnvironment0.cpp */,
+				B2EB8D8719586E380058A962 /* COPYING */,
+				B2EB8D8819586E380058A962 /* DelayQueue.cpp */,
+				B2EB8D8919586E380058A962 /* include */,
+				B2EB8D8A19586E380058A962 /* Makefile */,
+				B2EB8D8B19586E380058A962 /* Makefile.head */,
+				B2EB8D8C19586E380058A962 /* Makefile.tail */,
+			);
+			sourceTree = "<group>";
+		};
+		B2EB925B1958839A0058A962 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		B2EB8D8119586E380058A962 /* BasicUsageEnvironment */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = B2EB8D8D19586E380058A962 /* Build configuration list for PBXLegacyTarget "BasicUsageEnvironment" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = BasicUsageEnvironment;
+			passBuildSettingsInEnvironment = 1;
+			productName = BasicUsageEnvironment;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		B2EB8D7D19586E380058A962 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = B2EB8D8019586E380058A962 /* Build configuration list for PBXProject "BasicUsageEnvironment" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B2EB8D7C19586E380058A962;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B2EB925B1958839A0058A962 /* Products */;
+					ProjectRef = B2EB925A1958839A0058A962 /* UsageEnvironment.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				B2EB8D8119586E380058A962 /* BasicUsageEnvironment */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		B2EB8D7E19586E380058A962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		B2EB8D7F19586E380058A962 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		B2EB8D8E19586E380058A962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = BasicUsageEnvironment;
+				SDKROOT = macosx10.9;
+			};
+			name = Debug;
+		};
+		B2EB8D8F19586E380058A962 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = BasicUsageEnvironment;
+				SDKROOT = macosx10.9;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2EB8D8019586E380058A962 /* Build configuration list for PBXProject "BasicUsageEnvironment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2EB8D7E19586E380058A962 /* Debug */,
+				B2EB8D7F19586E380058A962 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2EB8D8D19586E380058A962 /* Build configuration list for PBXLegacyTarget "BasicUsageEnvironment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2EB8D8E19586E380058A962 /* Debug */,
+				B2EB8D8F19586E380058A962 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2EB8D7D19586E380058A962 /* Project object */;
+}

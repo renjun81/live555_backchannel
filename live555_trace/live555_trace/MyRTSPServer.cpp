@@ -1,3 +1,13 @@
+//
+//  MyRTSPServer.cpp
+//  live555_trace
+//
+//  Created by Liao KuoHsun on 2014/6/25.
+//  Copyright (c) 2014年 albert. All rights reserved.
+//
+
+#include "MyRTSPServer.hh"
+
 /**********
  This library is free software; you can redistribute it and/or modify it under
  the terms of the GNU Lesser General Public License as published by the
@@ -32,11 +42,6 @@ Boolean reuseFirstSource = False;
 
 static void announceStream(RTSPServer* rtspServer, ServerMediaSession* sms,
                            char const* streamName, char const* inputFileName); // fwd
-int myRTSPServer();
-
-int main(int argc, char** argv) {
-    myRTSPServer();
-}
 
 int myRTSPServer(){
     
@@ -86,7 +91,7 @@ int myRTSPServer(){
         = ServerMediaSession::createNew(*env, streamName, streamName,
                                         descriptionString);
         H264VideoFileServerMediaSubsession *sub =H264VideoFileServerMediaSubsession
-        ::createNew(*env, inputFileName, reuseFirstSource);
+            ::createNew(*env, inputFileName, reuseFirstSource);
         
         bFlag = sms->addSubsession(sub);
         if(bFlag==False) printf("addSubsession for %s error\n", inputFileName);
@@ -94,25 +99,25 @@ int myRTSPServer(){
         
         // Stream 2: AAC audio stream (ADTS-format file):
         ADTSAudioFileServerMediaSubsession *sub2 =ADTSAudioFileServerMediaSubsession
-        ::createNew(*env, audioFileName, reuseFirstSource);
-        
+            ::createNew(*env, audioFileName, reuseFirstSource);
+            
         bFlag = sms->addSubsession(sub2);
         if(bFlag==False) printf("addSubsession for %s error\n", audioFileName);
-        
+
         
         // Stream 3: backchannel AAC audio
         // TODO: modify here to support backchannel
         
         // implement a new class named ADTSBackChannelAudioFileServerMediaSubsession
         // use RTPSource to receive data and use ADTSAudioFileSink to save data to file
-        
+
         ADTSBackChannelAudioFileServerMediaSubsession *sub3 =ADTSBackChannelAudioFileServerMediaSubsession
         ::createNew(*env, outputFileName, reuseFirstSource);
         
         sub3->setSubsessionAsBackChannel();
         bFlag = sms->addSubsession(sub3);
         if(bFlag==False) printf("addSubsession for %s error\n", outputFileName);
-        
+
         rtspServer->addServerMediaSession(sms);
         
         // 20140703 albert.liao modified start
@@ -150,23 +155,3 @@ static void announceStream(RTSPServer* rtspServer, ServerMediaSession* sms,
     env << "Play this stream using the URL \"" << url << "\"\n";
     delete[] url;
 }
-
-// 20140706 albert.liao modified start
-FramedSource* MediaSubsession
-::createNewStreamSource(unsigned /*clientSessionId*/, unsigned& estBitrate) {
-   return NULL;
-}
-
-RTPSink* MediaSubsession
-::createNewRTPSink(Groupsock* rtpGroupsock,
-                   unsigned char rtpPayloadTypeIfDynamic,
-                   FramedSource* inputSource) {
-    
-   return NULL;
-}
-
-Boolean MediaSubsession::createSinkObjects(int useSpecialRTPoffset)
-{
-   return False;
-}
-// 20140706 albert.liao modified end

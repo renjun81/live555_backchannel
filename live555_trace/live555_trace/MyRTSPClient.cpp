@@ -62,18 +62,6 @@ void usage(UsageEnvironment& env, char const* progName) {
 }
 
 char eventLoopWatchVariable = 0;
-int myRTSPClient(char *pInfo, char *pURL);
-
-int main(int argc, char** argv) {
-    
-    // We need at least one "rtsp://" URL argument:
-    if (argc < 2) {
-        printf("argument fail");
-        return 1;
-    }
-    
-    myRTSPClient("Albert RTSP Client",argv[1]);
-}
 
 //int main(int argc, char** argv) {
 int myRTSPClient(char *pInfo, char *pURL) {
@@ -254,12 +242,12 @@ void setupNextSubsession(RTSPClient* rtspClient) {
             
             // TODO: rtsp server should create PassiveServerMediaSubsession,
             // so that multicast can work
-            //            rtspClient->sendSetupCommand(*scs.subsession,
-            //                                         continueAfterSETUP,
-            //                                         False,//True, /* streamOutgoing, for darwin */
-            //                                         REQUEST_STREAMING_OVER_TCP,
-            //                                         True, /*Multicast*/
-            //                                         NULL);
+//            rtspClient->sendSetupCommand(*scs.subsession,
+//                                         continueAfterSETUP,
+//                                         False,//True, /* streamOutgoing, for darwin */
+//                                         REQUEST_STREAMING_OVER_TCP,
+//                                         True, /*Multicast*/
+//                                         NULL);
             // 20140625 albert.liao modified end
         }
         return;

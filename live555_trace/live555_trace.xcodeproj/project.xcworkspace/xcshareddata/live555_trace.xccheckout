@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2CAACE24-4273-4B30-8876-1D6AF5F68A27</string>
+	<key>IDESourceControlProjectName</key>
+	<string>live555_trace</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1232825C-30DF-434A-9A2A-7B2C02C5476D</key>
+		<string>https://github.com/alb423/live555_20140206.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>live555_trace/live555_trace.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1232825C-30DF-434A-9A2A-7B2C02C5476D</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/alb423/live555_20140206.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1232825C-30DF-434A-9A2A-7B2C02C5476D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1232825C-30DF-434A-9A2A-7B2C02C5476D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>live555_iPhoneSimulator</string>
+		</dict>
+	</array>
+</dict>
+</plist>

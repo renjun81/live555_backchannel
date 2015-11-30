@@ -228,3 +228,24 @@ static ServerMediaSession* createNewSMS(UsageEnvironment& env,
 
   return sms;
 }
+
+// 20140706 albert.liao modified add
+// modify below code to support backchannel
+FramedSource* MediaSubsession
+::createNewStreamSource(unsigned /*clientSessionId*/, unsigned& estBitrate) {
+    estBitrate = 96; //96; // kbps, estimate
+    return NULL;
+}
+
+RTPSink* MediaSubsession
+::createNewRTPSink(Groupsock* rtpGroupsock,
+                   unsigned char rtpPayloadTypeIfDynamic,
+                   FramedSource* inputSource) {
+    return NULL;
+}
+
+Boolean MediaSubsession::createSinkObjects(int useSpecialRTPoffset)
+{
+    return False; // an error occurred
+}
+// 20140706 albert.liao modified end

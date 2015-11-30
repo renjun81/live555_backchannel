@@ -1,0 +1,152 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		B2EB8E7D19586E650058A962 /* COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		B2EB8E7E19586E650058A962 /* DynamicRTSPServer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DynamicRTSPServer.cpp; sourceTree = "<group>"; };
+		B2EB8E7F19586E650058A962 /* DynamicRTSPServer.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DynamicRTSPServer.hh; sourceTree = "<group>"; };
+		B2EB8E8019586E650058A962 /* live555MediaServer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = live555MediaServer.cpp; sourceTree = "<group>"; };
+		B2EB8E8119586E650058A962 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		B2EB8E8219586E650058A962 /* Makefile.head */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.head; sourceTree = "<group>"; };
+		B2EB8E8319586E650058A962 /* Makefile.tail */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.tail; sourceTree = "<group>"; };
+		B2EB8E8419586E650058A962 /* version.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = version.hh; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		B2EB8E7719586E650058A962 = {
+			isa = PBXGroup;
+			children = (
+				B2EB8E7D19586E650058A962 /* COPYING */,
+				B2EB8E7E19586E650058A962 /* DynamicRTSPServer.cpp */,
+				B2EB8E7F19586E650058A962 /* DynamicRTSPServer.hh */,
+				B2EB8E8019586E650058A962 /* live555MediaServer.cpp */,
+				B2EB8E8119586E650058A962 /* Makefile */,
+				B2EB8E8219586E650058A962 /* Makefile.head */,
+				B2EB8E8319586E650058A962 /* Makefile.tail */,
+				B2EB8E8419586E650058A962 /* version.hh */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		B2EB8E7C19586E650058A962 /* mediaServer */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = B2EB8E8519586E650058A962 /* Build configuration list for PBXLegacyTarget "mediaServer" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = mediaServer;
+			passBuildSettingsInEnvironment = 1;
+			productName = mediaServer;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		B2EB8E7819586E650058A962 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = B2EB8E7B19586E650058A962 /* Build configuration list for PBXProject "mediaServer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B2EB8E7719586E650058A962;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B2EB8E7C19586E650058A962 /* mediaServer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		B2EB8E7919586E650058A962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.9;
+			};
+			name = Debug;
+		};
+		B2EB8E7A19586E650058A962 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.9;
+			};
+			name = Release;
+		};
+		B2EB8E8619586E650058A962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = mediaServer;
+				SDKROOT = macosx10.9;
+			};
+			name = Debug;
+		};
+		B2EB8E8719586E650058A962 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = mediaServer;
+				SDKROOT = macosx10.9;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2EB8E7B19586E650058A962 /* Build configuration list for PBXProject "mediaServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2EB8E7919586E650058A962 /* Debug */,
+				B2EB8E7A19586E650058A962 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2EB8E8519586E650058A962 /* Build configuration list for PBXLegacyTarget "mediaServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2EB8E8619586E650058A962 /* Debug */,
+				B2EB8E8719586E650058A962 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2EB8E7819586E650058A962 /* Project object */;
+}

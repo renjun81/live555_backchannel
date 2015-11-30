@@ -593,7 +593,13 @@ Boolean RTSPClient::setRequestFields(RequestRecord* request,
   // Set various fields that will appear in our outgoing request, depending upon the particular command that we are sending.
 
   if (strcmp(request->commandName(), "DESCRIBE") == 0) {
+      
+    // 20140625 albert.liao modified start
     extraHeaders = (char*)"Accept: application/sdp\r\n";
+    // Enable below header to support ONVIF
+    // extraHeaders = (char*)"Accept: application/sdp\r\nRequire: www.onvif.org/ver20/backchannel\r\n";
+    // 20140625 albert.liao modified end
+      
   } else if (strcmp(request->commandName(), "OPTIONS") == 0) {
     // If we're currently part of a session, create a "Session:" header (in case the server wants this to indicate
     // client 'liveness); this makes up our 'extra headers':

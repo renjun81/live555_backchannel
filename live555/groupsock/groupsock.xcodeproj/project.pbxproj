@@ -1,0 +1,160 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		B2EB8D9A19586E400058A962 /* COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		B2EB8D9B19586E400058A962 /* GroupEId.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GroupEId.cpp; sourceTree = "<group>"; };
+		B2EB8D9C19586E400058A962 /* Groupsock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Groupsock.cpp; sourceTree = "<group>"; };
+		B2EB8D9D19586E400058A962 /* GroupsockHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GroupsockHelper.cpp; sourceTree = "<group>"; };
+		B2EB8D9E19586E400058A962 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; path = include; sourceTree = "<group>"; };
+		B2EB8D9F19586E400058A962 /* inet.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = inet.c; sourceTree = "<group>"; };
+		B2EB8DA019586E400058A962 /* IOHandlers.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IOHandlers.cpp; sourceTree = "<group>"; };
+		B2EB8DA119586E400058A962 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		B2EB8DA219586E400058A962 /* Makefile.head */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.head; sourceTree = "<group>"; };
+		B2EB8DA319586E400058A962 /* Makefile.tail */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.tail; sourceTree = "<group>"; };
+		B2EB8DA419586E400058A962 /* NetAddress.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NetAddress.cpp; sourceTree = "<group>"; };
+		B2EB8DA519586E400058A962 /* NetInterface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NetInterface.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		B2EB8D9419586E400058A962 = {
+			isa = PBXGroup;
+			children = (
+				B2EB8D9A19586E400058A962 /* COPYING */,
+				B2EB8D9B19586E400058A962 /* GroupEId.cpp */,
+				B2EB8D9C19586E400058A962 /* Groupsock.cpp */,
+				B2EB8D9D19586E400058A962 /* GroupsockHelper.cpp */,
+				B2EB8D9E19586E400058A962 /* include */,
+				B2EB8D9F19586E400058A962 /* inet.c */,
+				B2EB8DA019586E400058A962 /* IOHandlers.cpp */,
+				B2EB8DA119586E400058A962 /* Makefile */,
+				B2EB8DA219586E400058A962 /* Makefile.head */,
+				B2EB8DA319586E400058A962 /* Makefile.tail */,
+				B2EB8DA419586E400058A962 /* NetAddress.cpp */,
+				B2EB8DA519586E400058A962 /* NetInterface.cpp */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		B2EB8D9919586E400058A962 /* groupsock */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = B2EB8DA619586E400058A962 /* Build configuration list for PBXLegacyTarget "groupsock" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = groupsock;
+			passBuildSettingsInEnvironment = 1;
+			productName = groupsock;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		B2EB8D9519586E400058A962 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = B2EB8D9819586E400058A962 /* Build configuration list for PBXProject "groupsock" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B2EB8D9419586E400058A962;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B2EB8D9919586E400058A962 /* groupsock */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		B2EB8D9619586E400058A962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		B2EB8D9719586E400058A962 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		B2EB8DA719586E400058A962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = groupsock;
+				SDKROOT = macosx10.9;
+			};
+			name = Debug;
+		};
+		B2EB8DA819586E400058A962 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = groupsock;
+				SDKROOT = macosx10.9;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2EB8D9819586E400058A962 /* Build configuration list for PBXProject "groupsock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2EB8D9619586E400058A962 /* Debug */,
+				B2EB8D9719586E400058A962 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2EB8DA619586E400058A962 /* Build configuration list for PBXLegacyTarget "groupsock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2EB8DA719586E400058A962 /* Debug */,
+				B2EB8DA819586E400058A962 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2EB8D9519586E400058A962 /* Project object */;
+}

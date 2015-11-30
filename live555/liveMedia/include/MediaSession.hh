@@ -55,6 +55,11 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #include "FramedFilter.hh"
 #endif
 
+// 20140624 albert.liao modified start
+#define FLAG_RECVONLY 0
+#define FLAG_SENDONLY 1
+// 20140624 albert.liao modified end
+
 class MediaSubsession; // forward
 
 class MediaSession: public Medium {
@@ -262,6 +267,10 @@ public:
   // synchronized via RTCP.
   // (Note: If this function returns a negative number, then the result should be ignored by the caller.)
 
+    // 20140624 albert.liao modified start
+    int getFlag();
+    // 20140624 albert.liao modified end
+    
 protected:
   friend class MediaSession;
   friend class MediaSubsessionIterator;
@@ -282,7 +291,18 @@ protected:
   Boolean parseSDPAttribute_source_filter(char const* sdpLine);
   Boolean parseSDPAttribute_x_dimensions(char const* sdpLine);
   Boolean parseSDPAttribute_framerate(char const* sdpLine);
-
+    
+  // 20140624 albert.liao modified start
+  Boolean parseSDPAttribute_flag(char const* sdpLine);
+  virtual Boolean createSinkObjects(int useSpecialRTPoffset);
+  virtual FramedSource* createNewStreamSource(unsigned clientSessionId,
+                                                unsigned& estBitrate);
+  // "estBitrate" is the stream's estimated bitrate, in kbps
+  virtual RTPSink* createNewRTPSink(Groupsock* rtpGroupsock,
+                                      unsigned char rtpPayloadTypeIfDynamic,
+                                      FramedSource* inputSource);
+  // 20140624 albert.liao modified end
+    
   virtual Boolean createSourceObjects(int useSpecialRTPoffset);
     // create "fRTPSource" and "fReadSource" member objects, after we've been initialized via SDP
 
@@ -327,6 +347,15 @@ protected:
 
   // Other fields:
   char* fSessionId; // used by RTSP
+    
+    
+  // 20140624 albert.liao modified start
+  unsigned clientSessionId;
+  unsigned streamBitrate;
+  unsigned fFlag; // 0:recvonly, 1:sendonly
+  RTPSink* fRTPSink;
+  // 20140624 albert.liao modified end
+    
 };
 
 #endif

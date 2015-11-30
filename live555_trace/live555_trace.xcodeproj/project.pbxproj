@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A87370E195A59850072620E /* MyRTSPClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A87370C195A59850072620E /* MyRTSPClient.cpp */; };
+		9A873711195A5B130072620E /* MyRTSPServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A87370F195A5B130072620E /* MyRTSPServer.cpp */; };
+		9AD915E01969041D00ED6E2F /* ADTSAudioBufferSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD915D61969041D00ED6E2F /* ADTSAudioBufferSource.cpp */; };
+		9AD915E11969041D00ED6E2F /* ADTSAudioFileSink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD915D81969041D00ED6E2F /* ADTSAudioFileSink.cpp */; };
+		9AD915E31969041D00ED6E2F /* ADTSBackChannelAudioFileServerMediaSubsession.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD915DC1969041D00ED6E2F /* ADTSBackChannelAudioFileServerMediaSubsession.cpp */; };
+		9AD915E41969041D00ED6E2F /* AudioUtility.c in Sources */ = {isa = PBXBuildFile; fileRef = 9AD915DE1969041D00ED6E2F /* AudioUtility.c */; };
+		B2EB919D195881560058A962 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2EB919C195881560058A962 /* main.cpp */; };
+		B2EB92671958861B0058A962 /* libliveMedia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2EB92661958861B0058A962 /* libliveMedia.a */; };
+		B2EB92691958862C0058A962 /* libgroupsock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2EB92681958862C0058A962 /* libgroupsock.a */; };
+		B2EB926B195886390058A962 /* libBasicUsageEnvironment.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2EB926A195886390058A962 /* libBasicUsageEnvironment.a */; };
+		B2EB926D195886450058A962 /* libUsageEnvironment.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2EB926C195886450058A962 /* libUsageEnvironment.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B2EB9197195881560058A962 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9A87363C195916AA0072620E /* UsageEnvironment.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UsageEnvironment.xcodeproj; path = ../live/UsageEnvironment/UsageEnvironment.xcodeproj; sourceTree = "<group>"; };
+		9A873704195916D70072620E /* liveMedia.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = liveMedia.xcodeproj; path = ../live/liveMedia/liveMedia.xcodeproj; sourceTree = "<group>"; };
+		9A87370C195A59850072620E /* MyRTSPClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyRTSPClient.cpp; sourceTree = "<group>"; };
+		9A87370D195A59850072620E /* MyRTSPClient.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MyRTSPClient.hh; sourceTree = "<group>"; };
+		9A87370F195A5B130072620E /* MyRTSPServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyRTSPServer.cpp; sourceTree = "<group>"; };
+		9A873710195A5B130072620E /* MyRTSPServer.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MyRTSPServer.hh; sourceTree = "<group>"; };
+		9AD915D61969041D00ED6E2F /* ADTSAudioBufferSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ADTSAudioBufferSource.cpp; path = ../../live/BackChannel/ADTSAudioBufferSource.cpp; sourceTree = "<group>"; };
+		9AD915D81969041D00ED6E2F /* ADTSAudioFileSink.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ADTSAudioFileSink.cpp; path = ../../live/BackChannel/ADTSAudioFileSink.cpp; sourceTree = "<group>"; };
+		9AD915DC1969041D00ED6E2F /* ADTSBackChannelAudioFileServerMediaSubsession.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ADTSBackChannelAudioFileServerMediaSubsession.cpp; path = ../../live/BackChannel/ADTSBackChannelAudioFileServerMediaSubsession.cpp; sourceTree = "<group>"; };
+		9AD915DE1969041D00ED6E2F /* AudioUtility.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = AudioUtility.c; path = ../../live/BackChannel/AudioUtility.c; sourceTree = "<group>"; };
+		9AD915E51969112000ED6E2F /* AudioUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioUtility.h; path = ../../live/BackChannel/include/AudioUtility.h; sourceTree = "<group>"; };
+		9AD915E61969112D00ED6E2F /* ADTSAudioFileSink.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ADTSAudioFileSink.hh; path = ../../live/BackChannel/include/ADTSAudioFileSink.hh; sourceTree = "<group>"; };
+		9AD915E71969113A00ED6E2F /* ADTSBackChannelAudioFileServerMediaSubsession.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ADTSBackChannelAudioFileServerMediaSubsession.hh; path = ../../live/BackChannel/include/ADTSBackChannelAudioFileServerMediaSubsession.hh; sourceTree = "<group>"; };
+		9AD915E81969114600ED6E2F /* ADTSAudioBufferSource.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ADTSAudioBufferSource.hh; path = ../../live/BackChannel/include/ADTSAudioBufferSource.hh; sourceTree = "<group>"; };
+		B2D1AEA1196462C400BCF985 /* slamtv10.264 */ = {isa = PBXFileReference; lastKnownFileType = file; name = slamtv10.264; path = live555_trace/slamtv10.264; sourceTree = "<group>"; };
+		B2D1AEA2196462C400BCF985 /* test.aac */ = {isa = PBXFileReference; lastKnownFileType = file; name = test.aac; path = live555_trace/test.aac; sourceTree = "<group>"; };
+		B2D1AEA31964658C00BCF985 /* winamp-intro.aac */ = {isa = PBXFileReference; lastKnownFileType = file; name = "winamp-intro.aac"; path = "live555_trace/winamp-intro.aac"; sourceTree = "<group>"; };
+		B2EB9199195881560058A962 /* live555_trace */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = live555_trace; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2EB919C195881560058A962 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B2EB91CD195881910058A962 /* BasicUsageEnvironment.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BasicUsageEnvironment.xcodeproj; path = ../live/BasicUsageEnvironment/BasicUsageEnvironment.xcodeproj; sourceTree = "<group>"; };
+		B2EB91D11958819C0058A962 /* groupsock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = groupsock.xcodeproj; path = ../live/groupsock/groupsock.xcodeproj; sourceTree = "<group>"; };
+		B2EB91DD195881C60058A962 /* mediaServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mediaServer.xcodeproj; path = ../live/mediaServer/mediaServer.xcodeproj; sourceTree = "<group>"; };
+		B2EB91E1195881CE0058A962 /* proxyServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = proxyServer.xcodeproj; path = ../live/proxyServer/proxyServer.xcodeproj; sourceTree = "<group>"; };
+		B2EB9256195881DF0058A962 /* testProgs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = testProgs.xcodeproj; path = ../live/testProgs/testProgs.xcodeproj; sourceTree = "<group>"; };
+		B2EB92661958861B0058A962 /* libliveMedia.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libliveMedia.a; path = ../live/liveMedia/libliveMedia.a; sourceTree = "<group>"; };
+		B2EB92681958862C0058A962 /* libgroupsock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgroupsock.a; path = ../live/groupsock/libgroupsock.a; sourceTree = "<group>"; };
+		B2EB926A195886390058A962 /* libBasicUsageEnvironment.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBasicUsageEnvironment.a; path = ../live/BasicUsageEnvironment/libBasicUsageEnvironment.a; sourceTree = "<group>"; };
+		B2EB926C195886450058A962 /* libUsageEnvironment.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUsageEnvironment.a; path = ../live/UsageEnvironment/libUsageEnvironment.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B2EB9196195881560058A962 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2EB926D195886450058A962 /* libUsageEnvironment.a in Frameworks */,
+				B2EB926B195886390058A962 /* libBasicUsageEnvironment.a in Frameworks */,
+				B2EB92691958862C0058A962 /* libgroupsock.a in Frameworks */,
+				B2EB92671958861B0058A962 /* libliveMedia.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A87363D195916AA0072620E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A873705195916D70072620E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2D1AE99196462B300BCF985 /* test_media */ = {
+			isa = PBXGroup;
+			children = (
+				B2D1AEA1196462C400BCF985 /* slamtv10.264 */,
+				B2D1AEA2196462C400BCF985 /* test.aac */,
+				B2D1AEA31964658C00BCF985 /* winamp-intro.aac */,
+			);
+			name = test_media;
+			sourceTree = "<group>";
+		};
+		B2D1AEA719646B0200BCF985 /* client */ = {
+			isa = PBXGroup;
+			children = (
+				9AD915D61969041D00ED6E2F /* ADTSAudioBufferSource.cpp */,
+				9AD915E81969114600ED6E2F /* ADTSAudioBufferSource.hh */,
+				9A87370C195A59850072620E /* MyRTSPClient.cpp */,
+				9A87370D195A59850072620E /* MyRTSPClient.hh */,
+			);
+			name = client;
+			sourceTree = "<group>";
+		};
+		B2D1AEA819646B1100BCF985 /* server */ = {
+			isa = PBXGroup;
+			children = (
+				9AD915D81969041D00ED6E2F /* ADTSAudioFileSink.cpp */,
+				9AD915E61969112D00ED6E2F /* ADTSAudioFileSink.hh */,
+				9AD915DC1969041D00ED6E2F /* ADTSBackChannelAudioFileServerMediaSubsession.cpp */,
+				9AD915E71969113A00ED6E2F /* ADTSBackChannelAudioFileServerMediaSubsession.hh */,
+				9A87370F195A5B130072620E /* MyRTSPServer.cpp */,
+				9A873710195A5B130072620E /* MyRTSPServer.hh */,
+			);
+			name = server;
+			sourceTree = "<group>";
+		};
+		B2EB9190195881560058A962 = {
+			isa = PBXGroup;
+			children = (
+				B2EB926C195886450058A962 /* libUsageEnvironment.a */,
+				B2EB926A195886390058A962 /* libBasicUsageEnvironment.a */,
+				B2EB92681958862C0058A962 /* libgroupsock.a */,
+				B2EB92661958861B0058A962 /* libliveMedia.a */,
+				B2D1AE99196462B300BCF985 /* test_media */,
+				B2EB919B195881560058A962 /* live555_trace */,
+				B2EB919A195881560058A962 /* Products */,
+				9A873704195916D70072620E /* liveMedia.xcodeproj */,
+				9A87363C195916AA0072620E /* UsageEnvironment.xcodeproj */,
+				B2EB9256195881DF0058A962 /* testProgs.xcodeproj */,
+				B2EB91DD195881C60058A962 /* mediaServer.xcodeproj */,
+				B2EB91E1195881CE0058A962 /* proxyServer.xcodeproj */,
+				B2EB91D11958819C0058A962 /* groupsock.xcodeproj */,
+				B2EB91CD195881910058A962 /* BasicUsageEnvironment.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		B2EB919A195881560058A962 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2EB9199195881560058A962 /* live555_trace */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2EB919B195881560058A962 /* live555_trace */ = {
+			isa = PBXGroup;
+			children = (
+				9AD915DE1969041D00ED6E2F /* AudioUtility.c */,
+				9AD915E51969112000ED6E2F /* AudioUtility.h */,
+				B2EB919C195881560058A962 /* main.cpp */,
+				B2D1AEA819646B1100BCF985 /* server */,
+				B2D1AEA719646B0200BCF985 /* client */,
+			);
+			path = live555_trace;
+			sourceTree = "<group>";
+		};
+		B2EB91CE195881910058A962 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2EB91D21958819C0058A962 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2EB91DE195881C60058A962 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2EB91E2195881CE0058A962 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2EB9257195881DF0058A962 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B2EB9198195881560058A962 /* live555_trace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2EB91A2195881560058A962 /* Build configuration list for PBXNativeTarget "live555_trace" */;
+			buildPhases = (
+				B2EB9195195881560058A962 /* Sources */,
+				B2EB9196195881560058A962 /* Frameworks */,
+				B2EB9197195881560058A962 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = live555_trace;
+			productName = live555_trace;
+			productReference = B2EB9199195881560058A962 /* live555_trace */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2EB9191195881560058A962 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = albert;
+			};
+			buildConfigurationList = B2EB9194195881560058A962 /* Build configuration list for PBXProject "live555_trace" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B2EB9190195881560058A962;
+			productRefGroup = B2EB919A195881560058A962 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B2EB91CE195881910058A962 /* Products */;
+					ProjectRef = B2EB91CD195881910058A962 /* BasicUsageEnvironment.xcodeproj */;
+				},
+				{
+					ProductGroup = B2EB91D21958819C0058A962 /* Products */;
+					ProjectRef = B2EB91D11958819C0058A962 /* groupsock.xcodeproj */;
+				},
+				{
+					ProductGroup = 9A873705195916D70072620E /* Products */;
+					ProjectRef = 9A873704195916D70072620E /* liveMedia.xcodeproj */;
+				},
+				{
+					ProductGroup = B2EB91DE195881C60058A962 /* Products */;
+					ProjectRef = B2EB91DD195881C60058A962 /* mediaServer.xcodeproj */;
+				},
+				{
+					ProductGroup = B2EB91E2195881CE0058A962 /* Products */;
+					ProjectRef = B2EB91E1195881CE0058A962 /* proxyServer.xcodeproj */;
+				},
+				{
+					ProductGroup = B2EB9257195881DF0058A962 /* Products */;
+					ProjectRef = B2EB9256195881DF0058A962 /* testProgs.xcodeproj */;
+				},
+				{
+					ProductGroup = 9A87363D195916AA0072620E /* Products */;
+					ProjectRef = 9A87363C195916AA0072620E /* UsageEnvironment.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				B2EB9198195881560058A962 /* live555_trace */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B2EB9195195881560058A962 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A87370E195A59850072620E /* MyRTSPClient.cpp in Sources */,
+				B2EB919D195881560058A962 /* main.cpp in Sources */,
+				9AD915E31969041D00ED6E2F /* ADTSBackChannelAudioFileServerMediaSubsession.cpp in Sources */,
+				9A873711195A5B130072620E /* MyRTSPServer.cpp in Sources */,
+				9AD915E41969041D00ED6E2F /* AudioUtility.c in Sources */,
+				9AD915E11969041D00ED6E2F /* ADTSAudioFileSink.cpp in Sources */,
+				9AD915E01969041D00ED6E2F /* ADTSAudioBufferSource.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B2EB91A0195881560058A962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../live/liveMedia/include,
+					../live/BasicUsageEnvironment/include,
+					../live/groupsock/include,
+					../live/UsageEnvironment/include,
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					../live/liveMedia/,
+					../live/BasicUsageEnvironment/,
+					../live/groupsock/,
+					../live/UsageEnvironment/,
+					../live/testProgs,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+				STRIP_INSTALLED_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		B2EB91A1195881560058A962 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B2EB91A3195881560058A962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/miuki001/Work/live555_20140206/live/liveMedia,
+					/Users/miuki001/Work/live555_20140206/live/groupsock,
+					/Users/miuki001/Work/live555_20140206/live/BasicUsageEnvironment,
+					/Users/miuki001/Work/live555_20140206/live/UsageEnvironment,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		B2EB91A4195881560058A962 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/miuki001/Work/live555_20140206/live/liveMedia,
+					/Users/miuki001/Work/live555_20140206/live/groupsock,
+					/Users/miuki001/Work/live555_20140206/live/BasicUsageEnvironment,
+					/Users/miuki001/Work/live555_20140206/live/UsageEnvironment,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2EB9194195881560058A962 /* Build configuration list for PBXProject "live555_trace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2EB91A0195881560058A962 /* Debug */,
+				B2EB91A1195881560058A962 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2EB91A2195881560058A962 /* Build configuration list for PBXNativeTarget "live555_trace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2EB91A3195881560058A962 /* Debug */,
+				B2EB91A4195881560058A962 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2EB9191195881560058A962 /* Project object */;
+}

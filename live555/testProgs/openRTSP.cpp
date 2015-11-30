@@ -66,3 +66,76 @@ Boolean allowProxyServers = False;
 Boolean controlConnectionUsesTCP = True;
 Boolean supportCodecSelection = False;
 char const* clientProtocolName = "RTSP";
+
+// 20140703 albert.liao modified start
+#pragma mark - Below is test for backchannel
+//#include "ADTSAudioBufferSource.hh"
+//#define TEST_WITH_NEW_CLASS_AUDIO_BUFFER_SOURCE 1
+#ifdef TEST_WITH_NEW_CLASS_AUDIO_BUFFER_SOURCE
+#include "ADTSAudioBufferSource.hh"
+#endif
+
+#pragma mark - MediaSubsession virtual function
+
+FramedSource* MediaSubsession
+::createNewStreamSource(unsigned /*clientSessionId*/, unsigned& estBitrate) {
+    estBitrate = 96; //96; // kbps, estimate
+    
+#ifdef TEST_WITH_NEW_CLASS_AUDIO_BUFFER_SOURCE
+    FramedSource *pTmp = ADTSAudioBufferSource::createNew(fParent.envir(), 1, 11 /*8000*/, 1);
+    //ADTSAudioBufferSource* createNew(UsageEnvironment& env, unsigned int vProfile, unsigned int vSmaplingFrequenceIndex, unsigned int vChannels);
+#else
+    // The test file is get from http://www.live555.com/liveMedia/public/aac/
+    //FramedSource *pTmp = ADTSAudioFileSource::createNew(fParent.envir(), "/Users/liaokuohsun/Work/AudioTestSample/test.aac");
+    FramedSource *pTmp = ADTSAudioFileSource::createNew(fParent.envir(), "/Users/liaokuohsun/Downloads/1024.aac");
+#endif
+    return pTmp;
+}
+
+RTPSink* MediaSubsession
+::createNewRTPSink(Groupsock* rtpGroupsock,
+                   unsigned char rtpPayloadTypeIfDynamic,
+                   FramedSource* inputSource) {
+    
+#ifdef TEST_WITH_NEW_CLASS_AUDIO_BUFFER_SOURCE
+    ADTSAudioBufferSource* adtsSource = (ADTSAudioBufferSource*)inputSource;
+#else
+    ADTSAudioFileSource* adtsSource = (ADTSAudioFileSource*)inputSource;
+#endif
+    
+    RTPSink *pTmp = MPEG4GenericRTPSink::createNew(fParent.envir(), rtpGroupsock,
+                                                   rtpPayloadTypeIfDynamic,
+                                                   adtsSource->samplingFrequency(),
+                                                   "audio", "aac-hbr", adtsSource->configStr(),
+                                                   adtsSource->numChannels());
+    return pTmp;
+}
+
+Boolean MediaSubsession::createSinkObjects(int useSpecialRTPoffset)
+{
+    do {
+        // TODO: Fix me
+        clientSessionId = 0;
+        streamBitrate = 12000;
+        
+        fReadSource = createNewStreamSource(clientSessionId, streamBitrate);
+        if(!fReadSource)
+        {
+            fprintf(stderr, "MediaSubsession::createSinkObjects()  fReadSource==NULL\n");
+            break;
+        }
+        
+        fRTPSink = createNewRTPSink(fRTPSocket, 96, fReadSource);
+        
+        if(!fRTPSink)
+        {
+            fprintf(stderr, "MediaSubsession::createSinkObjects()  fRTPSink==NULL\n");
+            break;
+        }
+        
+        return True;
+    } while (0);
+    
+    return False; // an error occurred
+}
+// 20140703 albert.liao modified end
