@@ -6,7 +6,7 @@ USAGE_ENVIRONMENT_DIR = UsageEnvironment
 BASIC_USAGE_ENVIRONMENT_DIR = BasicUsageEnvironment
 
 BACKCHANNEL_DIR = BackChannel
-SCBT_BACKCHANNEL_DIR = libScbtBackChannel
+SCBT_BACKCHANNEL_DIR = scbtBackChannel
 TESTPROGS_DIR = testProgs
 
 MEDIA_SERVER_DIR = mediaServer
