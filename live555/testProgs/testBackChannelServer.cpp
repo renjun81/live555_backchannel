@@ -72,13 +72,9 @@ int myRTSPServer(){
         reuseFirstSource = True;
         
         // check if test file is exist
-        {
-            FILE *fp=NULL;
-            fp = fopen(inputFileName,"r");
-            if(fp==NULL) printf("File %s is not exist\n", inputFileName); else fclose(fp);
-            fp = fopen(audioFileName,"r");
-            if(fp==NULL) printf("File %s is not exist\n", audioFileName); else fclose(fp);
-        }
+        if(0 != access(inputFileName, 0)) printf("File %s is not exist\n", inputFileName);
+        if(0 != access(audioFileName, 0)) printf("File %s is not exist\n", audioFileName);
+        
         
         // Stream 1: H.264 video
         ServerMediaSession* sms
