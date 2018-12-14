@@ -89,7 +89,9 @@ int main(int argc, char** argv) {
 //	char* password = NULL;
 
 	WAVE_FILE = "in.wav";
-	char *pUrl = "rtsp://admin:12345@172.168.0.37:554/Streaming/Channels/2?transportmode=unicast";
+
+	//char *pUrl = "rtsp://admin:12345@172.168.0.37:554/Streaming/Channels/2?transportmode=unicast";
+	char *pUrl = "rtsp://192.168.84.230:8554/BackChannelTest";
 
     LOG("Run :: %s %s", pUrl, WAVE_FILE);
     return sendBeepSound(pUrl, NULL, NULL);

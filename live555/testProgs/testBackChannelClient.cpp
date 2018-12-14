@@ -64,7 +64,7 @@ void usage(UsageEnvironment& env, char const* progName) {
 char eventLoopWatchVariable = 0;
 bool bEnableBackChannel = true;
 bool bPassMuFilter = true;
-char* gsz_backSound = "send.wav";
+char* gsz_backSound = (char *)"send.wav";
 
 int myRTSPClient(char *pInfo, char *pURL);
 int main(int argc, char** argv) {
@@ -73,18 +73,18 @@ int main(int argc, char** argv) {
     if ( argc > 1)
 	{
 		if ( strcmp(argv[1], "camera") == 0 )
-			pUrl = "rtsp://admin:12345@172.168.0.101:554/Streaming/Channels/2?transportmode=unicast&profile=Profile_2";
+			pUrl = (char *)"rtsp://admin:12345@172.168.0.101:554/Streaming/Channels/2?transportmode=unicast&profile=Profile_2";
 		else
-			pUrl = "rtsp://127.0.0.1:8554/BackChannelTest";
+			pUrl = (char *)"rtsp://127.0.0.1:8554/BackChannelTest";
 	}
     else
-    	pUrl = "rtsp://192.168.56.1:8554/BackChannelTest";
+    	pUrl = (char *)"rtsp://192.168.84.230:8554/BackChannelTest";
     if ( argc > 2 ) gsz_backSound = argv[2];
     if ( argc > 3 ) strcmp(argv[3], "pcmu") == 0 ? bPassMuFilter = false:true;
 
     printf("URL = %s\nSound File = %s\nPass Mu Filter = %s\n\n", pUrl, gsz_backSound, bPassMuFilter?"true":"false");
 
-	myRTSPClient("BackChannel RTSP Client",pUrl);
+	myRTSPClient((char *)"BackChannel RTSP Client",pUrl);
 }
 
 //int main(int argc, char** argv) {

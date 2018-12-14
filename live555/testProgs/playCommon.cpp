@@ -152,7 +152,7 @@ int main(int argc, char** argv) {
 
 #ifdef USE_SIGNALS
   // Allow ourselves to be shut down gracefully by a SIGHUP or a SIGUSR1:
-  signal(SIGHUP, signalHandlerShutdown);
+  signal(SIGHUP,  signalHandlerShutdown);
   signal(SIGUSR1, signalHandlerShutdown);
 #endif
 
